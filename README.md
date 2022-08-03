@@ -65,6 +65,6 @@ We would like you to demonstrate your ability to:
 
 Notes:
 
-- This has not been set up with and type of CSS-in-JS, but if that is something you would like to add, please feel free.
+- This has not been set up with any type of CSS-in-JS, but if that is something you would like to add, please feel free.
 
 Best of luck!
