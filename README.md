@@ -64,6 +64,7 @@ We would like you to demonstrate your ability to:
 - Write Typescript typings for the components you create, and also the typings for the GraphQL API response
 
 Notes:
+
 - This has not been set up with and type of CSS-in-JS, but if that is something you would like to add, please feel free.
 
 Best of luck!
