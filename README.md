@@ -18,32 +18,32 @@ You're also welcome to write more tests for other parts of the application - but
 
 First you'll need to install your dependencies. We've used yarn, if you have another preference feel free to remove the lock file and use what you are comfortable with:
 
-```
+```sh
 cd client && yarn
 ```
 
 ## Start the app
 
-```
+```sh
 yarn dev
 ```
 
 This will do two things:
 
-- Start a Next.js app running in development on http://localhost:3000
-- Start a graphQL stub server running on http://localhost:3001/graphql
+- Start a Next.js app running in development on <http://localhost:3000>
+- Start a graphQL stub server running on <http://localhost:3001/graphql>
 
 ## Running tests
 
 You can run tests from the client directory.
 
-```
+```sh
 cd client && yarn test
 ```
 
 This should give you two failures:
 
-```
+```sh
 FAIL test/product.test.js
     ✕ should be able to increase and decrease product quantity
     ✕ should be able to add items to the basket
@@ -64,6 +64,7 @@ We would like you to demonstrate your ability to:
 - Write Typescript typings for the components you create, and also the typings for the GraphQL API response
 
 Notes:
-- This has not been set up with and type of CSS-in-JS, but if that is something you would like to add, please feel free.
+
+- This has not been set up with any type of CSS-in-JS, but if that is something you would like to add, please feel free.
 
 Best of luck!
