@@ -35,8 +35,8 @@ This will do two things:
 
 We would like you to demonstrate your ability to:
 
-- Proficiently use Nextjs and Typescript
 - Reason through a programming problem
+- Proficiently use Nextjs and Typescript
 - Implement a visual design accurately
 - Implement some user interactions
 - Write production-ready code for a high traffic app
