@@ -1,31 +1,29 @@
-<img src="https://static.octopuscdn.com/constantine/constantine.svg" alt="Octopus Energy mascot, Constantine" width="100" />
+<img src="https://kraken.tech/assets/logos/kraken-full-logo.svg" alt="Kraken technologies logo" width="200" />
 
-# Octopus Frontend code test
+# Kraken Frontend code test
 
 In this code test, you'll be asked to:
 
-- Make a simple React app that follows the design in `design.jpg`, consumes the API and makes the front end tests pass. Ideally the app should be responsive.
+- Make a simple Nextjs app that follows the design in `design.jpg` and consumes the API. Even though the app is quite simple, it should be designed in a scalable and maintainable way. Ideally the app should be responsive.
 
 We've included:
 
-- A sample [Next.js](https://nextjs.org/) project with a Typescript setup for your convenience, but you're welcome to swap it out for another framework if you prefer
-- Some CSS colour variables that match the colours in the design
-- The assets that you will need to complete the design
-
-You're also welcome to write more tests for other parts of the application - but design those however you like.
+- A sample [Next.js](https://nextjs.org/) project with a Typescript setup for your convenience.
+- Some CSS colour variables that match the colours in the design as guidance.
+- The assets that you will need to complete the design.
 
 ## Getting started
 
-First you'll need to install your dependencies. We've used yarn, if you have another preference feel free to remove the lock file and use what you are comfortable with:
+First you'll need to install your dependencies
 
 ```sh
-cd client && yarn
+cd client && pnpm install
 ```
 
 ## Start the app
 
 ```sh
-yarn dev
+cd client && pnpm dev
 ```
 
 This will do two things:
@@ -38,30 +36,20 @@ This will do two things:
 You can run tests from the client directory.
 
 ```sh
-cd client && yarn test
+cd client && pnpm test
 ```
-
-This should give you two failures:
-
-```sh
-FAIL test/product.test.js
-    ✕ should be able to increase and decrease product quantity
-    ✕ should be able to add items to the basket
-```
-
-The task is to build the app that passes these tests.
 
 ## What we're looking for
 
 We would like you to demonstrate your ability to:
 
 - Reason through a programming problem
-- Implement a visual design
+- Proficiently use Nextjs and Typescript
+- Implement a visual design accurately
 - Implement some user interactions
-- Write code that is easy to understand and extend
+- Write production-ready code for a high traffic app
 - Write tests that document and safeguard the program's behaviour
 - Use a version control system (e.g. git) to effectively convey intent
-- Write Typescript typings for the components you create, and also the typings for the GraphQL API response
 
 Notes:
 
