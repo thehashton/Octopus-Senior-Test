@@ -1,6 +1,6 @@
-<img src="https://kraken.tech/assets/logos/kraken-full-logo.svg" alt="Kraken technologies logo" width="200" />
+<img src="https://static.octopuscdn.com/constantine/constantine.svg" alt="Octopus Energy mascot, Constantine" width="100" />
 
-# Kraken Frontend code test
+# Octopus Energy Frontend code test
 
 In this code test, you'll be asked to:
 
