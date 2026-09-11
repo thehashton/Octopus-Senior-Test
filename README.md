@@ -4,7 +4,7 @@
 
 In this code test, you'll be asked to:
 
-- Make a simple Nextjs app that follows the design in `design.jpg` and consumes the API. Even though the app is quite simple, it should be designed in a scalable and maintainable way. Ideally the app should be responsive.
+- Make a React application that follows the design in `design.jpg` and consumes the API. Even though the app is quite simple, it should be designed in a scalable and maintainable way. Ideally the app should be responsive.
 
 We've included:
 
