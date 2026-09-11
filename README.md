@@ -41,6 +41,8 @@ cd client && pnpm test
 
 ## What we're looking for
 
+We want to see how you approach this problem in a real-world scenario. Consider how your solution scales, handles edge cases, and anticipates future requirements in a production environment.
+
 We would like you to demonstrate your ability to:
 
 - Reason through a programming problem
@@ -50,9 +52,5 @@ We would like you to demonstrate your ability to:
 - Write production-ready code for a high traffic app
 - Write tests that document and safeguard the program's behaviour
 - Use a version control system (e.g. git) to effectively convey intent
-
-Notes:
-
-- This has not been set up with any type of CSS-in-JS, but if that is something you would like to add, please feel free.
 
 Best of luck!
