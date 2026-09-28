@@ -6,7 +6,7 @@
     "dev": "pnpm run server & next dev",
     "build": "next build",
     "start": "next start",
-    "server": "pnpm exec json-graphql-server ../server/db.js --port 3001 --host 127.0.0.1",
+    "server": "pnpm exec json-graphql-server ../server/db.js --port 3001",
     "test": "vitest",
     "format": "prettier --write ."
   },
