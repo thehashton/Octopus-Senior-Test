@@ -22,6 +22,11 @@ export type Product = {
   img_url: string;
 };
 
+type GraphQLResponse<T> = {
+  data?: T;
+  errors?: Array<{ message: string }>;
+};
+
 const query = `
   query Product($id: ID!) {
     Product(id: $id) {
@@ -84,29 +89,50 @@ function isDemoMode() {
   return process.env.DEMO_MODE === "true";
 }
 
-export async function getProduct(id: string): Promise<Product> {
-  // Skip the network call so a deploy can render without the local stub.
-  if (isDemoMode()) {
-    const product = demoProducts.find((item) => item.id === id);
-    if (!product) {
-      throw new Error(`Product ${id} not found`);
-    }
-    return product;
+// Shared by getProduct and getProducts so a bad response fails with a clear
+// message instead of crashing on data.data.Product.
+async function graphqlRequest<T>(
+  body: Record<string, unknown>,
+): Promise<T | undefined> {
+  const url = process.env.GRAPHQL_URL;
+  if (!url) {
+    throw new Error("GRAPHQL_URL is not set");
   }
 
-  const response = await fetch(process.env.GRAPHQL_URL!, {
+  const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      query,
-      variables: { id },
-    }),
+    body: JSON.stringify(body),
   });
 
-  const data = await response.json();
-  return resolveProductImage(data.data.Product);
+  if (!response.ok) {
+    throw new Error(`GraphQL request failed with status ${response.status}`);
+  }
+
+  const payload = (await response.json()) as GraphQLResponse<T>;
+  if (payload.errors?.length) {
+    throw new Error(payload.errors[0].message);
+  }
+
+  return payload.data;
+}
+
+export async function getProduct(id: string): Promise<Product | null> {
+  // Skip the network call so a deploy can render without the local stub.
+  if (isDemoMode()) {
+    return demoProducts.find((item) => item.id === id) ?? null;
+  }
+
+  const data = await graphqlRequest<{ Product: Product | null }>({
+    query,
+    variables: { id },
+  });
+
+  const product = data?.Product;
+  if (!product) return null;
+  return resolveProductImage(product);
 }
 
 const allProductsQuery = `
@@ -134,16 +160,9 @@ export async function getProducts(): Promise<Product[]> {
   // Same fixture as getProduct, so the list and the detail page stay in sync.
   if (isDemoMode()) return demoProducts;
 
-  const response = await fetch(process.env.GRAPHQL_URL!, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query: allProductsQuery,
-    }),
+  const data = await graphqlRequest<{ allProducts: Product[] | null }>({
+    query: allProductsQuery,
   });
 
-  const data = await response.json();
-  return (data.data.allProducts ?? []).map(resolveProductImage);
+  return (data?.allProducts ?? []).map(resolveProductImage);
 }
