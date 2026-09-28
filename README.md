@@ -48,11 +48,27 @@ This will do two things:
 
 ## Running tests
 
-You can run tests from the client directory.
+Tests live in `client/test` and run with Vitest. The `test` script is on the client package, and the repo root forwards to it, so this works from the project root:
 
 ```sh
-cd client && pnpm test
+pnpm test
 ```
+
+That starts watch mode, so the suite reruns when a test or the code it covers is saved. Press `q` to stop it.
+
+Run the suite once, the same way CI would:
+
+```sh
+pnpm test -- --run
+```
+
+Run a single file:
+
+```sh
+pnpm test -- test/cart.test.tsx
+```
+
+The suite covers price formatting, the quantity stepper, adding a selected quantity to the cart, the product page and catalogue card, and the hard-coded catalogue used when `DEMO_MODE=true`.
 
 ## What we're looking for
 
