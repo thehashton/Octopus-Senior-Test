@@ -1,6 +1,8 @@
-<img src="https://static.octopuscdn.com/constantine/constantine.svg" alt="Octopus Energy mascot, Constantine" width="100" />
+<div align="center">
+  <img src="https://static.octopuscdn.com/constantine/constantine.svg" alt="Octopus Energy mascot, Constantine" width="100" />
+  <h1>Octopus Energy Frontend code test</h1>
+</div>
 
-# Octopus Energy Frontend code test
 > By Harry Ashton - [GitHub](https://github.com/thehashton)
 
 In this code test, you'll be asked to:
