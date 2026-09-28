@@ -1,4 +1,5 @@
-import { getProduct } from "../../lib/products";
+import { ProductImage } from "@/components/Product/ProductImage/product-image";
+import { getProduct } from "@/lib/products";
 import Image from "next/image";
 
 export default async function Product() {
@@ -6,9 +7,9 @@ export default async function Product() {
   return (
     <div>
       <h1>Product Page</h1>
-      <Image src={product.img_url} alt={product.name} width={640} height={640} />
+      <ProductImage src={product.img_url} alt={product.name} />
       <p>{product.name}</p>
       <p>{product.img_url}</p>
     </div>
-  )
+  );
 }
