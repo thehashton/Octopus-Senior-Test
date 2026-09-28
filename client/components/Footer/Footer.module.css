@@ -1,0 +1,13 @@
+.footer {
+  max-width: 960px;
+  margin: 48px auto 0;
+  padding: 0 16px 24px;
+  box-sizing: border-box;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--purpleHaze);
+}
