@@ -18,7 +18,17 @@ body {
 }
 
 body {
+  /* Fill the screen height so the footer sits at the bottom when the page is short.
+   Use 100dvh on modern browsers (better on mobile); 100vh for older ones. */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--siphon);
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 .home {
