@@ -3,7 +3,7 @@
   <h1>Octopus Energy Frontend code test</h1>
 </div>
 
-> By Harry Ashton - [GitHub](https://github.com/thehashton)
+> By Harry Ashton - [GitHub](https://github.com/thehashton) · [Live demo](https://octopus-senior-test.vercel.app)
 
 In this code test, you'll be asked to:
 
