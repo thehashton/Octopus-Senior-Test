@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,9 +11,9 @@ export default function Home() {
             alt="Octopus Energy Logo"
           />
         </figure>
-        <Link 
-        href={"/product"} 
-        style={{ fontSize: "1.2rem", color: "white" }}> Go to the Product Page</Link>
+        <Link href={"/products"} style={{ fontSize: "1.2rem", color: "white" }}>
+          <Button>Go to the Products Page</Button>
+        </Link>
       </div>
     </main>
   );

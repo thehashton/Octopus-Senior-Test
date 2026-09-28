@@ -1,9 +1,10 @@
 import { Product as ProductType } from "@/lib/products";
 import { ProductImage } from "./ProductImage";
+import styles from "./Product.module.css";
 
 const Product = ({ product }: { product: ProductType }) => {
   return (
-    <div>
+    <div className={styles.ProductContainer}>
       <ProductImage src={product.img_url} alt={product.name} />
       <p>{product.name}</p>
       <p>{product.img_url}</p>

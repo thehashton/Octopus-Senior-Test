@@ -19,35 +19,29 @@ function isUseableImageSrc(src: string) {
 }
 
 export function ProductImage({ src, alt }: ProductImageProps) {
-  // If the image src is not useable, set the failed state to true
-  const [failed, setFailed] = useState(() => !isUseableImageSrc(src));
-
-  if (failed) {
-    return (
-      <div
-        className={styles.productImageContainer}
-        role="img"
-        aria-label="No Image Available"
-      >
-        <Image
-          src="/no-image-icon.png"
-          alt="No Image Available"
-          width={300}
-          height={250}
-        />
-      </div>
-    );
-  }
+  const canTry = isUseableImageSrc(src);
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <div className={styles.productImageContainer}>
-      <Image
-        src={failed ? "/no-image-icon.png" : src}
-        alt={failed ? "No image available" : alt}
-        fill
-        className={styles.productImage}
-        onError={() => setFailed(true)}
-      />
+      {!loaded && (
+        <Image
+          src="/no-image-icon.png"
+          alt="No image available"
+          fill
+          className={styles.productImage}
+        />
+      )}
+      {canTry && (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className={loaded ? styles.productImage : styles.hidden}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(false)}
+        />
+      )}
     </div>
   );
 }
