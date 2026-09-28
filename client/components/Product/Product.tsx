@@ -1,13 +1,7 @@
-import { Product as ProductType } from "@/lib/products";
+import { formatPrice, Product as ProductType } from "@/lib/products";
 import { ProductImage } from "./ProductImage";
+import { Purchase } from "./Purchase";
 import styles from "./Product.module.css";
-
-function formatPrice(pence: number) {
-  return new Intl.NumberFormat("en-GB", {
-    style: "currency",
-    currency: "GBP",
-  }).format(pence / 100);
-}
 
 const Product = ({ product }: { product: ProductType }) => {
   return (
@@ -17,29 +11,31 @@ const Product = ({ product }: { product: ProductType }) => {
       </div>
       <div className={styles.details}>
         <h1 className={styles.name}>{product.name}</h1>
-        <p>
+        <p className={styles.meta}>
           {product.power} // Packet of {product.quantity}
         </p>
-        <p>{formatPrice(product.price)}</p>
-
-        <h2>Description</h2>
-        <p>{product.description}</p>
-
-        <h2>Specifications</h2>
-        <dl>
-          <dt>Brand</dt>
-          <dd>{product.brand}</dd>
-          <dt>Item weight (g)</dt>
-          <dd>{product.weight}</dd>
-          <dt>Dimensions (cm)</dt>
-          <dd>
-            {product.height} x {product.width} x {product.length}
-          </dd>
-          <dt>Item Model number</dt>
-          <dd>{product.model_code}</dd>
-          <dt>Colour</dt>
-          <dd>{product.colour}</dd>
-        </dl>
+        <Purchase price={formatPrice(product.price)} />
+        <section className={styles.descriptionSection}>
+          <h2 className={styles.sectionTitle}>Description</h2>
+          <p className={styles.description}>{product.description}</p>
+        </section>
+        <section className={styles.specsSection}>
+          <h2 className={styles.sectionTitle}>Specifications</h2>
+          <dl className={styles.specs}>
+            <dt>Brand</dt>
+            <dd>{product.brand}</dd>
+            <dt>Item weight (g)</dt>
+            <dd>{product.weight}</dd>
+            <dt>Dimensions (cm)</dt>
+            <dd>
+              {product.height} x {product.width} x {product.length}
+            </dd>
+            <dt>Item Model number</dt>
+            <dd>{product.model_code}</dd>
+            <dt>Colour</dt>
+            <dd>{product.colour}</dd>
+          </dl>
+        </section>
       </div>
     </article>
   );

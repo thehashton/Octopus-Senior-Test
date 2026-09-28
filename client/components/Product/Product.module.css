@@ -5,19 +5,100 @@
   align-items: flex-start;
   gap: 32px;
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   margin: 20px auto 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
+  container-type: inline-size;
 }
 
-.image,
-.details {
+/* Once the columns wrap, keep the text the same width as the image. */
+@container (max-width: 871px) {
+  .details {
+    max-width: 420px;
+  }
+}
+
+.image {
   flex: 1 1 420px;
   max-width: 420px;
   min-width: min(100%, 420px);
 }
 
+.details {
+  flex: 1 1 420px;
+  min-width: min(100%, 420px);
+}
+
 .name {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.meta {
+  margin: 0 0 20px;
+  color: var(--purpleHaze);
+  font-size: 1rem;
+}
+
+.purchase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.price {
   margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.descriptionSection {
+  background: var(--hemocyanin);
+  width: 100%;
+  margin-top: 28px;
+  padding: 28px 20px;
+  box-sizing: border-box;
+}
+
+.specsSection {
+  background: var(--siphon);
+  width: 100%;
+  padding: 28px 20px;
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px 24px;
+  margin: 0;
+}
+
+.specs dt,
+.specs dd {
+  margin: 0;
+}
+
+.specs dt {
+  color: var(--purpleHaze);
+}
+
+.specs dd {
+  text-align: right;
 }

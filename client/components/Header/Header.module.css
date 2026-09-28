@@ -20,6 +20,12 @@
   }
 }
 
+.basketWrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
 .basket {
   width: 30px;
   height: auto;
@@ -28,4 +34,21 @@
   &:hover {
     opacity: 0.6;
   }
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: var(--sohoLights);
+  color: var(--siphon);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
 }

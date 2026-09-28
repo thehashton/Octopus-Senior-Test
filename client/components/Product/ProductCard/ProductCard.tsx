@@ -1,18 +1,21 @@
-import { Product } from "@/lib/products";
-import styles from "./ProductCard.module.css";
-import { ProductImage } from "../ProductImage";
-import Link from "next/link";
 import { Button } from "@/components/Button";
+import { formatPrice, Product } from "@/lib/products";
+import { ProductImage } from "../ProductImage";
+import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className={styles.productCard}>
+    <article className={styles.productCard}>
       <ProductImage src={product.img_url} alt={product.name} />
-      <p>{product.name}</p>
-      <Link href={`/products/${product.id}`}>
-        <Button>View Product</Button>
-      </Link>
-    </div>
+      <h2 className={styles.name}>{product.name}</h2>
+      <p className={styles.meta}>
+        {product.power} // Packet of {product.quantity}
+      </p>
+      <p className={styles.price}>{formatPrice(product.price)}</p>
+      <Button href={`/products/${product.id}`} fullWidth>
+        View Product
+      </Button>
+    </article>
   );
 };
 

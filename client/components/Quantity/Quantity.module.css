@@ -1,0 +1,57 @@
+.quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--purpleHaze);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 13px;
+  color: var(--ice);
+  cursor: pointer;
+}
+
+.icon {
+  display: block;
+  width: 9px;
+  height: 9px;
+  fill: currentColor;
+}
+
+.control:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.decrease {
+  background: var(--plum);
+}
+
+.increase {
+  background: var(--sohoLights);
+  color: var(--siphon);
+}
+
+.value {
+  min-width: 1ch;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}

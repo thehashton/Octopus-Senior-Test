@@ -1,11 +1,26 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  max-width: 640px;
-  min-width: 400px;
-  margin: 0 auto;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  min-width: min(100%, 280px);
+}
+
+.name {
+  margin: 8px 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.meta {
+  margin: 0;
+  color: var(--purpleHaze);
+}
+
+.price {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
 }

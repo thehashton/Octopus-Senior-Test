@@ -1,3 +1,10 @@
+export function formatPrice(pence: number) {
+  return new Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  }).format(pence / 100);
+}
+
 export type Product = {
   id: string;
   name: string;

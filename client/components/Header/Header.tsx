@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./Header.module.css";
 import Link from "next/link";
+import { useCart } from "@/components/Cart";
+import styles from "./Header.module.css";
 
 const Header = () => {
+  const { count } = useCart();
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -15,13 +20,20 @@ const Header = () => {
           height={100}
         />
       </Link>
-      <Image
-        className={styles.basket}
-        src="/basket.svg"
-        alt="Logo"
-        width={100}
-        height={100}
-      />
+      <div className={styles.basketWrap}>
+        <Image
+          className={styles.basket}
+          src="/basket.svg"
+          alt="Basket"
+          width={100}
+          height={100}
+        />
+        {count > 0 && (
+          <span className={styles.badge} aria-live="polite">
+            {count}
+          </span>
+        )}
+      </div>
     </header>
   );
 };

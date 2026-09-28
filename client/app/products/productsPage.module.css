@@ -5,6 +5,6 @@
   align-items: center;
   gap: 20px;
   padding: 20px;
-  max-width: var(--pageWidth);
+  max-width: 960px;
   margin: 0 auto;
 }

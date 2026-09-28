@@ -1,16 +1,26 @@
 .button {
+  display: inline-block;
+  box-sizing: border-box;
   background-color: var(--sohoLights);
   color: var(--siphon);
-  font-size: 18px;
-  font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
-  animation: ease-in-out;
-  transition: all 0.5s ease;
+  transition: filter 0.2s ease;
 
   &:hover {
-    background-color: var(--purpleHaze);
+    filter: brightness(1.08);
   }
+}
+
+.fullWidth {
+  display: block;
+  width: 100%;
 }
