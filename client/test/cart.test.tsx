@@ -1,4 +1,10 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import { CartProvider } from "@/components/Cart";
 import { Header } from "@/components/Header";
 import { Purchase } from "@/components/Product/Purchase";
@@ -36,14 +42,22 @@ describe("cart", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("adds the selected quantity", () => {
+  it("adds the selected quantity", async () => {
     renderCart();
 
     fireEvent.click(screen.getByRole("button", { name: "Increase quantity" }));
     fireEvent.click(screen.getByRole("button", { name: "Add to cart" }));
 
+    const addButton = screen.getByRole("button", { name: "Add to cart" });
+    expect(addButton).toBeDisabled();
+    expect(addButton).toHaveAttribute("aria-busy", "true");
+
     expect(
       within(screen.getByRole("banner")).getByText("2"),
     ).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(addButton).not.toBeDisabled();
+    });
   });
 });

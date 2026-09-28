@@ -5,6 +5,7 @@ type ButtonProps = {
   children: React.ReactNode;
   fullWidth?: boolean;
   href?: string;
+  loading?: boolean;
   onClick?: () => void;
 };
 
@@ -12,6 +13,7 @@ const Button = ({
   children,
   fullWidth = false,
   href,
+  loading = false,
   onClick,
 }: ButtonProps) => {
   const className = fullWidth
@@ -27,7 +29,14 @@ const Button = ({
   }
 
   return (
-    <button type="button" className={className} onClick={onClick}>
+    <button
+      type="button"
+      className={className}
+      onClick={onClick}
+      disabled={loading}
+      aria-busy={loading || undefined}
+    >
+      {loading && <span className={styles.spinner} aria-hidden="true" />}
       {children}
     </button>
   );
