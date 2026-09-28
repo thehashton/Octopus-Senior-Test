@@ -15,6 +15,18 @@ We've included:
 - Some CSS colour variables that match the colours in the design as guidance.
 - The assets that you will need to complete the design.
 
+## Preview
+
+<div align="center">
+  <p><strong>Desktop.</strong> The product page on a wide screen, with the image beside the details.</p>
+  <p><img src="./images/preview-desktop.jpg" alt="Desktop product page with the image beside the details" width="560" /></p>
+</div>
+
+<div align="center">
+  <p><strong>Mobile.</strong> The same page once the layout wraps into a single column.</p>
+  <p><img src="./images/preview-mobile.jpg" alt="Mobile product page stacked in a single column" width="240" /></p>
+</div>
+
 ## Getting started
 
 First you'll need to install your dependencies
