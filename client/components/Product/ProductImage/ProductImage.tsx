@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./product-image.module.css";
+import styles from "./ProductImage.module.css";
 
 type ProductImageProps = {
   src: string;

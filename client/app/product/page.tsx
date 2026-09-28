@@ -1,4 +1,4 @@
-import { ProductImage } from "@/components/Product/ProductImage/product-image";
+import { ProductImage } from "@/components/Product/ProductImage/ProductImage";
 import { getProduct } from "@/lib/products";
 import Image from "next/image";
 
