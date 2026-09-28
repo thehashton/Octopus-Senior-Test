@@ -18,7 +18,7 @@ function isUseableImageSrc(src: string) {
   );
 }
 
-export function ProductImage({ src, alt }: ProductImageProps) {
+function ProductImage({ src, alt }: ProductImageProps) {
   const canTry = isUseableImageSrc(src);
   const [loaded, setLoaded] = useState(false);
 
@@ -45,3 +45,5 @@ export function ProductImage({ src, alt }: ProductImageProps) {
     </div>
   );
 }
+
+export default ProductImage;

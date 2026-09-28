@@ -1,4 +1,4 @@
-import Product from "@/components/Product";
+import { Product } from "@/components/Product";
 import { getProduct } from "@/lib/products";
 
 export default async function ProductPage({
