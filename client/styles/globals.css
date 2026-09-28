@@ -6,6 +6,7 @@
   --purpleHaze: #a49fc8;
   --siphon: #100030;
   --sohoLights: #f050f8;
+  --pageWidth: var(--maxWidth);
 }
 
 html,
