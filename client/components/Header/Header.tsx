@@ -1,7 +1,24 @@
+import Image from "next/image";
+import styles from "./Header.module.css";
+
 const Header = () => {
   return (
-    <header>
-      <h1>Header</h1>
+    <header className={styles.header}>
+      <Image
+        className={styles.logo}
+        src="/octopus-logo.svg"
+        alt="Octopus Energy Logo"
+        title="Go to home page"
+        width={100}
+        height={100}
+      />
+      <Image
+        className={styles.basket}
+        src="/basket.svg"
+        alt="Logo"
+        width={100}
+        height={100}
+      />
     </header>
   );
 };

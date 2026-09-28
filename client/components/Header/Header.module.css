@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 1600px;
+  margin: 0 auto 20px auto;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.basket {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
