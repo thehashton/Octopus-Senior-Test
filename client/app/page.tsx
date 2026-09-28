@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main>
@@ -8,11 +10,9 @@ export default function Home() {
             alt="Octopus Energy Logo"
           />
         </figure>
-        <h1>Welcome to the Octopus Energy Frontend code test!</h1>
-        <p>
-          Get started by visiting the <code>/product</code> URL and editing{" "}
-          <code>client/pages/product.js</code>
-        </p>
+        <Link 
+        href={"/product"} 
+        style={{ fontSize: "1.2rem", color: "white" }}> Go to the Product Page</Link>
       </div>
     </main>
   );

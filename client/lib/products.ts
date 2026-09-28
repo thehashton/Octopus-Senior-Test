@@ -37,7 +37,7 @@ export type Product = {
   `;
 
   export async function getProduct(id: string): Promise<Product> {
-    const response = await fetch(`http://localhost:3001/graphql`, {
+    const response = await fetch(process.env.GRAPHQL_URL!, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
