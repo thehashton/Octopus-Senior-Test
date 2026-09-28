@@ -90,4 +90,37 @@ describe("live catalogue", () => {
 
     await expect(getProduct("99")).resolves.toBeNull();
   });
+
+  it("rejects getProducts when the response is not ok", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 503,
+        json: async () => ({}),
+      }),
+    );
+
+    await expect(getProducts()).rejects.toThrow(
+      "GraphQL request failed with status 503",
+    );
+  });
+
+  it("rejects getProducts with the GraphQL error message", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => ({
+          errors: [{ message: "Cannot query field allProducts" }],
+          data: { allProducts: [{ id: "1" }] },
+        }),
+      }),
+    );
+
+    await expect(getProducts()).rejects.toThrow(
+      "Cannot query field allProducts",
+    );
+  });
 });

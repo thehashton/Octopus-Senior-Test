@@ -8,7 +8,13 @@ import styles from "../Product.module.css";
 
 const ADD_FEEDBACK_MS = 400;
 
-const Purchase = ({ price }: { price: string }) => {
+const Purchase = ({
+  price,
+  maxQuantity,
+}: {
+  price: string;
+  maxQuantity: number;
+}) => {
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
   const { addToCart } = useCart();
@@ -35,7 +41,7 @@ const Purchase = ({ price }: { price: string }) => {
     <>
       <div className={styles.purchase}>
         <p className={styles.price}>{price}</p>
-        <Quantity value={quantity} onChange={setQuantity} />
+        <Quantity value={quantity} onChange={setQuantity} max={maxQuantity} />
       </div>
       <Button fullWidth loading={isAdding} onClick={handleAddToCart}>
         Add to cart

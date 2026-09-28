@@ -28,7 +28,7 @@ describe("cart", () => {
     render(
       <CartProvider>
         <Header />
-        <Purchase price="£12.99" />
+        <Purchase price="£12.99" maxQuantity={4} />
       </CartProvider>,
     );
   }

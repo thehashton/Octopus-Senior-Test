@@ -14,7 +14,10 @@ const Product = ({ product }: { product: ProductType }) => {
         <p className={styles.meta}>
           {product.power} // Packet of {product.quantity}
         </p>
-        <Purchase price={formatPrice(product.price)} />
+        <Purchase
+          price={formatPrice(product.price)}
+          maxQuantity={product.quantity}
+        />
         <section className={styles.descriptionSection}>
           <h2 className={styles.sectionTitle}>Description</h2>
           <p className={styles.description}>{product.description}</p>

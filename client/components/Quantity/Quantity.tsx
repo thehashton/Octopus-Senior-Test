@@ -5,10 +5,14 @@ import styles from "./Quantity.module.css";
 const Quantity = ({
   value,
   onChange,
+  max,
 }: {
   value: number;
   onChange: (value: number) => void;
+  max?: number;
 }) => {
+  const atMax = max !== undefined && value >= max;
+
   return (
     <div className={styles.quantity}>
       <span className={styles.label} id="quantity-label">
@@ -37,7 +41,10 @@ const Quantity = ({
           type="button"
           className={`${styles.control} ${styles.increase}`}
           aria-label="Increase quantity"
-          onClick={() => onChange(value + 1)}
+          disabled={atMax}
+          onClick={() =>
+            onChange(max !== undefined ? Math.min(max, value + 1) : value + 1)
+          }
         >
           <svg className={styles.icon} viewBox="0 0 18 18" aria-hidden="true">
             <rect x="7" y="0" width="4" height="18" rx="2" />
